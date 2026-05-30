@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />                                                                                                                                                                                                                                                                                    
+    <title>Participants - MMS Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/admin.css"/>
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="sidebar-brand-icon">
+                <svg viewBox="0 0 24 24"><path d="M3 18 L12 6 L21 18" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 18
+                    L12 11 L17 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+                <div class="sidebar-brand-name">MMS Admin</div>
+                <div class="sidebar-brand-sub">Dashboard</div>
+            </div>
+        </div>
+        <div class="sidebar-admin">
+            <div class="sidebar-admin-avatar">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+                <div class="sidebar-admin-name" id="adminName">Jena Ruanes</div>
+                <div class="sidebar-admin-role">Administrator</div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="sidebar-link">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Dashboard
+            </a>
+            <a href="openclimbs.html" class="sidebar-link">
+                <svg viewBox="0 0 24 24"><path d="M3 18 L12 5 L21 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Open Climbs
+            </a>
+            <a href="participants.html" class="sidebar-link active">
+                <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5"/><circle cx="17" cy="7" r="3"/><path d="M17 12c2.7 0 5 2 5 5"/></svg>
+                Participants
+            </a>
+        </nav>
+        <div class="sidebar-logout">
+            <button class="sidebar-logout-btn" id="logoutBtn">
+                <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <h1 class="admin-page-title">Participants Management</h1>
+        <p class="admin-page-sub">View and manage all climb participants</p>
+
+        <div class="admin-card">
+            <div class="admin-toolbar">
+                <div class="admin-search">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    <input type="text", id="searhcInput" placeholder="Search participants..." />
+                </div>
+                <button class="btn-outline" id="exportBtn">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                    Export
+                </button>
+            </div>
+
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Contacts</th>
+                            <th>Climb</th>
+                            <th>Experience</th>
+                            <th>Payment</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="participantTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div class="modal-overlay" id="detailModal">
+    <div class="modal modal-lg">
+        <div class="modal-header">
+            <h2 id="detailModalTitle">Participant Details</h2>
+            <button class="modal-close" id="closeDetailModal">
+                <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg>
+            </button>
+        </div>
+        <div class="modal-body" id="detailModalBody"></div>
+    </div>
+</div>
+
+<script src="../js/auth-s.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/participant.js"></script>
+</body>
+</html>

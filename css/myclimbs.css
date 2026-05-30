@@ -1,0 +1,159 @@
+.welcome-banner {
+  background: var(--green-dark);
+  padding: 2rem 3rem;
+}
+.welcome-inner {
+  display: flex; align-items: center; gap: 1.25rem;
+  max-width: 1100px; margin: 0 auto;
+}
+.welcome-avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.welcome-avatar svg { width: 32px; height: 32px; }
+.welcome-title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 800;
+  color: var(--white); margin-bottom: 0.25rem;
+}
+.welcome-sub { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+
+.myclimbs-content {
+  background: var(--green-pale);
+  padding: 2.5rem 3rem;
+  min-height: 60vh;
+}
+
+.stats-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; max-width: 1100px; margin: 0 auto 2.5rem;
+}
+.stat-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 1.5rem; box-shadow: var(--card-shadow);
+  display: flex; align-items: center; gap: 1rem;
+}
+.stat-icon-wrap {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--green-light);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.stat-icon-wrap svg { width: 22px; height: 22px; stroke: var(--green-dark); }
+.stat-big {
+  font-size: 1.75rem; font-weight: 800;
+  color: var(--text-dark); line-height: 1;
+}
+.stat-label { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+.section-block { max-width: 1100px; margin: 0 auto 2rem; }
+.section-block-title {
+  font-size: 1.3rem; font-weight: 800;
+  color: var(--green-dark); margin-bottom: 1.25rem;
+}
+
+.empty-state {
+  background: var(--white); border-radius: var(--radius);
+  padding: 3rem; text-align: center;
+  box-shadow: var(--card-shadow);
+  display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.empty-state svg { width: 48px; height: 48px; stroke: var(--text-muted); }
+.empty-state p { font-size: 0.95rem; color: var(--text-muted); }
+
+.climb-item {
+  background: var(--white); border-radius: var(--radius);
+  box-shadow: var(--card-shadow); overflow: hidden;
+  display: flex; margin-bottom: 1.25rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.climb-item:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,92,56,0.12); }
+
+.climb-item-img {
+  width: 200px; flex-shrink: 0; overflow: hidden;
+}
+.climb-item-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.climb-item-body {
+  flex: 1; padding: 1.5rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.climb-item-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+.climb-item-name {
+  font-size: 1.15rem; font-weight: 800; color: var(--green-dark);
+}
+.climb-item-badges { display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-end; }
+
+.badge {
+  font-size: 0.75rem; font-weight: 700;
+  padding: 0.3rem 0.75rem; border-radius: 50px;
+}
+.badge-confirmed { background: var(--green-badge); color: var(--green-dark); }
+.badge-pending   { background: #fff3cd; color: #856404; }
+.badge-paid      { background: var(--green-light); color: var(--green-dark); }
+.badge-unpaid    { background: #fde8e8; color: #c0392b; }
+
+.climb-item-meta {
+  display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+}
+.climb-item-meta-item {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.82rem; color: var(--text-muted);
+}
+.climb-item-meta-item svg { width: 14px; height: 14px; stroke: var(--green-dark); }
+
+.climb-item-desc {
+  font-size: 0.875rem; line-height: 1.6; color: var(--text-mid);
+}
+
+.climb-item-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 0.5rem;
+}
+.climb-item-registered {
+  font-size: 0.8rem; color: var(--text-muted);
+}
+
+.btn-green-sm {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--green-dark); color: var(--white);
+  padding: 0.6rem 1.25rem; border-radius: var(--radius-sm);
+  font-size: 0.85rem; font-weight: 700;
+  text-decoration: none; border: none; cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-green-sm:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+.emergency-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 1.5rem; box-shadow: var(--card-shadow);
+  display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;
+}
+.emergency-left {
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.emergency-left svg { width: 24px; height: 24px; stroke: var(--green-dark); flex-shrink: 0; margin-top: 2px; }
+.emergency-title { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 0.3rem; }
+.emergency-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+.nav-logout-btn {
+  background: none; border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.35rem 0.75rem;
+  font-size: 0.8rem; font-weight: 600; color: var(--text-mid);
+  cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background 0.2s;
+}
+.nav-logout-btn:hover { background: var(--green-light); color: var(--green-dark); }
+
+@media (max-width: 900px) {
+  .welcome-banner { padding: 1.5rem; }
+  .myclimbs-content { padding: 2rem 1.5rem; }
+  .stats-row { grid-template-columns: 1fr; }
+  .climb-item { flex-direction: column; }
+  .climb-item-img { width: 100%; height: 200px; }
+  .emergency-card { flex-direction: column; align-items: flex-start; }
+}

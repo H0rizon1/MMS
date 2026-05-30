@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMC — Metropolitan Mountaineering Society</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/bmc.css" />
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 18 L12 6 L21 18" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 18 L12 11 L17 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <span class="nav-logo-text">MMS</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="about.html">About MMS</a></li>
+    <li><a href="bmc.html" class="active">BMC</a></li>
+    <li><a href="climbs.html">Open Climbs</a></li>
+  </ul>
+  <div class="nav-auth">
+    <a href="login.html" class="nav-login">Login</a>
+    <a href="#" class="nav-signup">Sign Up</a>
+  </div>
+</nav>
+
+<section class="bmc-hero">
+  <div class="bmc-hero-bg"></div>
+  <div class="bmc-hero-content">
+    <h1>Basic Mountaineering Course</h1>
+    <p>Learn the fundamentals of safe and responsible mountaineering</p>
+  </div>
+</section>
+
+<section class="bmc-about">
+  <h2 class="section-heading reveal">About BMC</h2>
+  <div class="bmc-about-text reveal">
+    <p>Our Basic Mountaineering Course is a comprehensive 3-day training program designed for beginners who want to learn essential mountaineering skills. The course covers everything from outdoor cooking and tent pitching to navigation, first aid, and Leave No Trace principles.</p>
+    <p>Led by experienced instructors, this intensive training will prepare you for your first mountain adventure and set you on the path to becoming a responsible mountaineer.</p>
+  </div>
+</section>
+
+<section class="batches-section">
+  <h2 class="section-heading reveal">Upcoming Batches</h2>
+  <div class="batches-grid">
+
+    <div class="batch-card reveal">
+      <div class="batch-img">
+        <img src="images/about.jpg" alt="BMC Batch 45" />
+      </div>
+      <div class="batch-body">
+        <h3 class="batch-title">Basic Mountaineering Course - Batch 45</h3>
+        <div class="batch-meta">
+          <div class="batch-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            September 10–12, 2026
+          </div>
+          <div class="batch-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            MMS Training Grounds, Rizal
+          </div>
+        </div>
+        <p class="batch-desc">A comprehensive 3-day training covering fundamental mountaineering skills including outdoor cooking, tent pitching, navigation, and Leave No Trace principles.</p>
+        <button class="btn-register" onclick="openModal('batch45')">View Details & Register</button>
+      </div>
+    </div>
+
+    <div class="batch-card reveal">
+      <div class="batch-img">
+        <img src="images/bmc.jpg" alt="BMC Batch 46" />
+      </div>
+      <div class="batch-body">
+        <h3 class="batch-title">Basic Mountaineering Course - Batch 46</h3>
+        <div class="batch-meta">
+          <div class="batch-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            November 15–17, 2026
+          </div>
+          <div class="batch-meta-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            MMS Training Grounds, Rizal
+          </div>
+        </div>
+        <p class="batch-desc">Learn essential mountaineering skills in this intensive 3-day course designed for beginners.</p>
+        <button class="btn-register" onclick="openModal('batch46')">View Details & Register</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 18 L12 6 L21 18" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 18 L12 11 L17 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="footer-brand-name">MMS</div>
+      <div class="footer-brand-desc">Metropolitan Mountaineering Society — Your gateway to adventure and nature.</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About MMS</a></li>
+        <li><a href="bmc.html">BMC</a></li>
+        <li><a href="#">Open Climbs</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact Us</div>
+      <div class="footer-contact">
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.1 13.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          (02) 8123-4567
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          info@mms.org
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          123 Mountain St., Quezon City, Metro Manila
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Follow Us</div>
+      <div class="footer-socials">
+        <a href="#" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" class="footer-social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Metropolitan Mountaineering Society. All rights reserved.
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal-batch45">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Basic Mountaineering Course - Batch 45</h2>
+      <button class="modal-close" onclick="closeModal('batch45')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-photos">
+        <img src="images/about.jpg" alt="Batch 45 photo 1" />
+        <img src="images/bmc.jpg" alt="Batch 45 photo 2" />
+      </div>
+      <h3 class="modal-section-title">Description</h3>
+      <p class="modal-desc">A comprehensive 3-day training covering fundamental mountaineering skills including outdoor cooking, tent pitching, navigation, and Leave No Trace principles.</p>
+      <div class="modal-info-grid">
+        <div>
+          <div class="modal-info-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Schedule
+          </div>
+          <div class="modal-info-value">September 10–12, 2026</div>
+        </div>
+        <div>
+          <div class="modal-info-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Venue
+          </div>
+          <div class="modal-info-value">MMS Training Grounds, Rizal</div>
+        </div>
+      </div>
+      <h3 class="modal-section-title">Requirements</h3>
+      <ul class="modal-checklist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Physically fit and healthy</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>At least 18 years old</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Willing to participate in outdoor activities</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>No prior mountaineering experience required</li>
+      </ul>
+      <h3 class="modal-section-title">Instructors</h3>
+      <ul class="modal-instructors">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Sir Roberto Cruz - Lead Instructor</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Ms. Linda Fernandez - Navigation Specialist</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Mr. Ramon Torres - First Aid Expert</li>
+      </ul>
+      <div class="modal-fee">
+        <div class="modal-fee-label">Registration Fee</div>
+        <div class="modal-fee-amount">₱2,500</div>
+        <div class="modal-fee-desc">Includes training materials, certificates, meals during training, and venue use.</div>
+        <button class="btn-register-now">Register Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-batch46">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Basic Mountaineering Course - Batch 46</h2>
+      <button class="modal-close" onclick="closeModal('batch46')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-photos">
+        <img src="images/bmc.jpg" alt="Batch 46 photo 1" />
+        <img src="images/about.jpg" alt="Batch 46 photo 2" />
+      </div>
+      <h3 class="modal-section-title">Description</h3>
+      <p class="modal-desc">Learn essential mountaineering skills in this intensive 3-day course designed for beginners.</p>
+      <div class="modal-info-grid">
+        <div>
+          <div class="modal-info-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            Schedule
+          </div>
+          <div class="modal-info-value">November 15–17, 2026</div>
+        </div>
+        <div>
+          <div class="modal-info-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Venue
+          </div>
+          <div class="modal-info-value">MMS Training Grounds, Rizal</div>
+        </div>
+      </div>
+      <h3 class="modal-section-title">Requirements</h3>
+      <ul class="modal-checklist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Physically fit and healthy</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>At least 18 years old</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Willing to participate in outdoor activities</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>No prior mountaineering experience required</li>
+      </ul>
+      <h3 class="modal-section-title">Instructors</h3>
+      <ul class="modal-instructors">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Sir Roberto Cruz - Lead Instructor</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Ms. Linda Fernandez - Navigation Specialist</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>Mr. Ramon Torres - First Aid Expert</li>
+      </ul>
+      <div class="modal-fee">
+        <div class="modal-fee-label">Registration Fee</div>
+        <div class="modal-fee-amount">₱2,500</div>
+        <div class="modal-fee-desc">Includes training materials, certificates, meals during training, and venue use.</div>
+        <button class="btn-register-now">Register Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/bmc.js"></script>
+</body>
+</html>

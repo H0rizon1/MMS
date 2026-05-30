@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>                                                                                                                                                                                                                                                                                                             
+    <title>My Climbs - Metropolitan Mountaineering Society</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/myclimbs.css" />
+</head>
+
+<body>
+<nav>
+    <a class="nav-logo" href="home.html">
+        <div class="nav-logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 18 L12 6 L21 18" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 18 L12 11 L17 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="nav-logo-text">MMS</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About MMS</a></li>
+        <li><a href="bmc.html">BMC</a></li>
+        <li><a href="climbs.html">Open Climbs</a></li>
+        <li id="myClimbsLink"><a href="myclimbs.html" class="active">My Climbs</a></li>
+    </ul>
+    <div class="nav-user" id="navuser">
+        <div class="nav-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>
+        </div>
+        <span id="anvUserName">User</span>
+        <button class="nav-logout-btn" id="lougoutBtn">Logout</button>
+    </div>
+</nav>
+
+<section class="welcome-banner">
+    <div class="welcome-inner">
+        <div class="welcome-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+            <h1 class="welcome-title" id="welcomeName">Welcome back!</h1>
+            <p class="welcome-sub">Track your climbing journey</p>
+        </div>
+    </div>
+</section>
+
+<div class="myclimbs-content">
+    <div class="stats-row" id="statsRow">
+        <div class="stat-card">
+            <div class="stat-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18 L12 5 L21 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+                <div class="stat-big" id="statUpcoming">0</div>
+                <div class="stat-label">Upcoming Climbs</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+                <div class="stat-big" id="statConfirmed">0</div>
+                <div class="stat-label">Confirmed</div>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"></svg>
+            </div>
+            <div>
+                <div class="stat-big" id="statPending">0</div>
+                <div class="stat-label">Pending Payment</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <h2 class="section-block-title">My Upcoming Climbs</h2>
+        <div id="climbList">
+            <div class="empty-state" id="emptyState">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18 L12 5 L21 18" stroke-linecap="round" stroke-linejoin="round"></svg>
+                    <p>You haven't registered for any climbs yet.</p>
+                    <a href="climbs.html" class="btn-green-sm">Browse Open Climbs</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-block">
+        <div class="emergency-card">
+            <div class="emergency-left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a2 2 0
+                    012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.1 13.91a16 16 0
+                    006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                <div>
+                    <div class="emergency-title">Emergency Contect</div>
+                    <div class="emergency-desc">Make sure to update your emergency contact information before you climb.</div>
+                </div>
+            </div>
+            <button class="btn-green-sm" id="updateContactBtn">Update Contact Info</button>
+        </div>
+    </div>
+</div>
+
+
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <div class="footer-brand-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 18 L12 6 L21 18" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 18 L12 11 L17 18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="footer-brand-name">MMS</div>
+            <div class="footer-brand-desc">Metropolitan Mountaineering Society — Your gateway to adventure and nature.</div>
+        </div>
+        <div>
+            <div class="footer-col-title">Quick Links</div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About MMS</a></li>
+                <li><a href="bmc.html">BMC</a></li>
+                <li><a href="climbs.html">Open Climbs</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Contact Us</div>
+            <div class="footer-contact">
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.1 13.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    (02) 8123-4567
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    info@mms.org
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    123 Mountain St., Quezon City, Metro Manila
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="footer-col-title">Follow Us</div>
+            <div class="footer-socials">
+                <a href="#" class="footer-social">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                </a>
+                <a href="#" class="footer-social">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="#" class="footer-social">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 Metropolitan Mountaineering Society. All rights reserved.
+    </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/main.js"></script>
+<script src="js/my-climbs.js"></script>
+</body>
+</html>
