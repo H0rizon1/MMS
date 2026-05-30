@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Session check:', sessionStorage.getItem('mms_user'), localStorage.getItem('mms_user'));
     const user = getCurrentUser();
+    console.log('User:', user);
 
     if (!user || user.role !== 'admin') {
         window.location.href = '../login.html';
