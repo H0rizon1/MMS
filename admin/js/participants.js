@@ -63,24 +63,52 @@ function renderTable(participants) {
     return;
   }
 
-  tbody.innerHTML = participants.map((p, i) => `
-    <tr>
-      <td>
-        <div class="participant-name">${p.name}</div>
-        <div class="participant-email">${p.email}</div>
-      </td>
-      <td>
-        <div class="participant-contact">${p.contact}</div>
-        <div class="participant-emergency">${p.emergency}</div>
-      </td>
-      <td>${p.climb}</td>
-      <td><span class="badge badge-${p.experience.toLowerCase()}">${p.experience}</span></td>
-      <td><span class="badge badge-${p.payment}">${p.payment}</span></td>
-      <td>
-        <button class="table-action-btn" onclick="viewDetail(${allParticipants.indexOf(p)})">View Details</button>
-      </td>
-    </tr>
-  `).join('');
+  tbody.innerHTML = participants.map((p) => {
+    const globalIndex = allParticipants.indexOf(p);
+    return `
+      <tr>
+        <td>
+          <div class="participant-name">${p.name}</div>
+          <div class="participant-email">${p.email}</div>
+        </td>
+        <td>
+          <div class="participant-contact">${p.contact}</div>
+          <div class="participant-emergency">${p.emergency}</div>
+        </td>
+        <td>${p.climb}</td>
+        <td><span class="badge badge-${p.experience.toLowerCase()}">${p.experience}</span></td>
+        <td>
+          <span
+            class="badge badge-${p.payment}"
+            style="cursor:pointer;user-select:none;"
+            title="Click to toggle payment status"
+            onclick="togglePayment(${globalIndex})"
+          >${p.payment}</span>
+        </td>
+        <td>
+          <button class="table-action-btn" onclick="viewDetail(${globalIndex})">View Details</button>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function togglePayment(index) {
+  const p = allParticipants[index];
+  p.payment = p.payment === 'paid' ? 'pending' : 'paid';
+
+  // Re-render whichever list is currently active
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  if (q) {
+    filtered = allParticipants.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.email.toLowerCase().includes(q) ||
+      p.climb.toLowerCase().includes(q)
+    );
+    renderTable(filtered);
+  } else {
+    renderTable(allParticipants);
+  }
 }
 
 function viewDetail(index) {
@@ -120,7 +148,13 @@ function viewDetail(index) {
     </div>
     <div>
       <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.25rem;">Payment Status</div>
-      <span class="badge badge-${p.payment}">${p.payment}</span>
+      <span
+        class="badge badge-${p.payment}"
+        style="cursor:pointer;user-select:none;"
+        title="Click to toggle payment status"
+        onclick="togglePayment(${index}); viewDetail(${index});"
+      >${p.payment}</span>
+      <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem;">Click badge to toggle</div>
     </div>
   `;
 
