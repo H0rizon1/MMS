@@ -13,9 +13,22 @@ const USERS = {
     },
 };
 
+function getAllUsers() {                                                                                                                                                                                                                                        
+    let registered = [];
+    try {
+        const raw = localStorage.getItem('mms_registered_users');
+        const parsed = raw ? JSON.parse(raw) : [];
+        registered = Array.isArray(parsed) ? parsed : [];
+    } catch (e) {
+        registered = [];
+    }
+    return [...Object.values(USERS), ...registered];
+}
+
 function saveSession(user, remember) {
     const storage = remember ? localStorage : sessionStorage;
-    storage.setItem('mms_user', JSON.stringify(user));
+    const { password, ...safeUser } = user;
+    storage.setItem('mms_user', JSON.stringify(safeUser));
 }
 
 function getSession() {
@@ -39,5 +52,9 @@ function getCurrentUser() {
 function logout() {
     clearSession();
     const isAdmin = window.location.pathname.includes('/admin/');
-    window.location.href = isAdmin ? '../login.html' : 'login.html';
+    if (isAdmin) {
+        window.location.replace('../login.html');
+    } else {
+        window.location.replace('login.html');
+    }
 }

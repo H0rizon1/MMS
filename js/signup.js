@@ -1,10 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-  const session = getSession();
-  if (session) {
-    window.location.href = 'home.html';
-    return;
-  }
+document.addEventListener('DOMContentLoaded', () => {                                                                                                         
 
   const fullNameInput   = document.getElementById('fullName');
   const emailInput      = document.getElementById('email');
@@ -16,6 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const signupSuccess   = document.getElementById('signupSuccess');
   const togglePw        = document.getElementById('togglePw');
   const toggleConfirmPw = document.getElementById('toggleConfirmPw');
+
+    const session = getSession();
+  if (session) {
+    window.location.href = session.role === 'admin' ? 'admin/dashboard.html' : 'home.html';
+    return;
+  }
 
   togglePw.addEventListener('click', () => {
     passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
@@ -38,12 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     signupError.classList.remove('show');
     signupSuccess.classList.remove('show');
   }
-  function setLoading(loading) {
-    signupBtn.disabled = loading;
-    signupBtn.innerHTML = loading
-      ? 'Creating account...'
-      : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg> Create Account`;
-  }
 
   signupBtn.addEventListener('click', () => {
     clearMessages();
@@ -60,29 +54,33 @@ document.addEventListener('DOMContentLoaded', () => {
     if (password.length < 6)             { showError('Password must be at least 6 characters.'); return; }
     if (password !== confirmPw)           { showError('Passwords do not match.'); return; }
 
-    setLoading(true);
-
-    const taken = Object.values(USERS).some(
+    const builtInTaken = Object.values(USERS).some(
       u => u.username.toLowerCase() === username.toLowerCase()
     );
-    if (taken) {
-      showError('That username is already taken.');
-      setLoading(false);
-      return;
-    }
+    if (builtInTaken) { showError("That username is already taken. Please choose another."); return; }
 
-    setTimeout(() => {
-      const newUser = { username, fullName, email, role: 'user' };
-      saveSession(newUser, false);
-      showSuccess('Account created! Redirecting...');
-      setTimeout(() => { window.location.href = 'index.html'; }, 1200);
-    }, 500);
+    const registeredUsers = JSON.parse(localStorage.getItem('mms_registered_users') || '[]');
+    const alreadyExists = registeredUsers.some(
+      u => u.username.toLowerCase() === username.toLowerCase()
+    );
+    if (alreadyExists) { showError('That username is already taken. Please choose another.'); return; }
+
+    const newUser = {
+      username,
+      password,
+      fullName,
+      email,
+      role: 'user',
+    };
+    registeredUsers.push(newUser);
+    localStorage.setItem('mms_registered_users', JSON.stringify(registeredUsers));
+
+    signupBtn.disabled = true;
+    showSuccess("Account created! Redirecting to login...");
+    setTimeout(() => { window.location.href = 'login.html'; }, 1500);
   });
 
   [fullNameInput, emailInput, usernameInput, passwordInput, confirmPwInput].forEach(input => {
-    input.addEventListener('keydown', e => {
-      if (e.key === 'Enter') signupBtn.click();
-    });
+    input.addEventListener('kaydown', e => { if (e.key === 'Enter') signupBtn.click(); });
   });
-
 });

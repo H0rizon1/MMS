@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── SCROLL REVEAL ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
       if (entry.isIntersecting) {
@@ -11,14 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // ── DYNAMIC NAVBAR ──
   const user = getCurrentUser();
   const myClimbsLink = document.getElementById('myClimbsLink');
   const navAuth = document.querySelector('.nav-auth');
   const navUser = document.querySelector('.nav-user');
 
   if (user) {
-    if (myClimbsLink) myClimbsLink.style.display = 'block';
+    if (myClimbsLink) {
+      myClimbsLink.style.display = 'block';
+      const anchor = myClimbsLink.querySelector('a');
+      if (anchor) anchor.href = 'myclimbs.html';
+    }
 
     if (navAuth) {
       navAuth.outerHTML = `

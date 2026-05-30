@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setLoading(true);
 
-        const match = Object.values(USERS).find(
+        const match = getAllUsers().find(
             u => u.username.toLowerCase() === username.toLowerCase() && u.password === password
         );
 
@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     [usernameInput, passwordInput].forEach(input => {
         input.addEventListener('keydown', e => {
-            if (e.key === 'Enter') loginBtn.click();
-        });
+            if (e.key === 'Enter') loginBtn.click(); });
     });
 });

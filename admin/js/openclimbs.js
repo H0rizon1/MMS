@@ -9,7 +9,7 @@ let climbs = [
     limit: 20,
     joined: 12,
     desc: 'A beginner-friendly mountain perfect for first-time hikers.',
-    img: '../images/kapigpiglatan.jpg',
+    img: '../images/mtkapig.jpg',
     status: 'upcoming',
   },
   {
@@ -22,7 +22,7 @@ let climbs = [
     limit: 25,
     joined: 18,
     desc: 'The third highest peak in the Philippines. Famous for its sea of clouds.',
-    img: '../images/pulag.jpg',
+    img: '../images/pulag1.jpg',
     status: 'upcoming',
   },
   {
@@ -35,7 +35,7 @@ let climbs = [
     limit: 30,
     joined: 8,
     desc: 'Known for its Godzilla-like mountain ridges and rolling hills.',
-    img: '../images/ulap.jpg',
+    img: '../images/MtUlap.jpg',
     status: 'upcoming',
   },
 ];
@@ -59,15 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('createClimbBtn').addEventListener('click', () => {
         editingClimbId = null;
         document.getElementById('climbModalTitle').textContent = 'Create New Climb';
-        document.getElementById('saveClimbbtn').textContent = 'Create Climb';
+        document.getElementById('savedClimbBtn').textContent = 'Create Climb';
         clearForm();
         openModal('climbModal');
     });
 
     document.getElementById('closeClimbModal').addEventListener('click', () => closeModal('climbModal'));
-    document.getElementById('closeParticipantsModal').addEventListener('click', () => closeModal('participantsModal'));
+    document.getElementById('closeParticipantsModal').addEventListener('click', () => closeModal('paticipantsModal'));
  
-    document.getElementById('saveClimbBtn').addEventListener('click', saveClimb);
+    document.getElementById('savedClimbBtn').addEventListener('click', saveClimb);
 });
 
 function renderClimbs() {
@@ -105,7 +105,7 @@ function renderClimbs() {
 }
 
 function viewParticipants(climbId) {
-    const climb = climb.find(c => c.id === climbId);
+    const climb = climbs.find(c => c.id === climbId);
     const participants = participantsByClimbs[climbId] || [];
 
     document.getElementById('participantsModalTitle').textContent = `${climb.name} - Participants`;
@@ -130,7 +130,7 @@ function viewParticipants(climbId) {
       `).join('');
     }
 
-    openModal('participantsModal');
+    openModal('paticipantsModal');
 }
 
 function editClimb(climbId) {
@@ -138,7 +138,7 @@ function editClimb(climbId) {
     editingClimbId = climbId;
 
     document.getElementById('climbModalTitle').textContent = 'Edit Climb';
-    document.getElementById('saveClimbBtn').textContent = 'Save Changes';
+    document.getElementById('savedClimbBtn').textContent = 'Save Changes';
     document.getElementById('fieldName').value = climb.name;
     document.getElementById('fieldDifficulty').value = climb.difficulty;
     document.getElementById('fieldElevation').value = climb.elevation;
@@ -177,7 +177,7 @@ function saveClimb() {
                 elev, location: loc, schedule, limit, desc };
         }
     } else {
-        const newId = name.toLowerCase().replance(/[^a-z0-9]/g, '-');
+        const newId = name.toLowerCase().replace(/[^a-z0-9]/g, '-');
         climbs.push({
             id: newId, name, location: loc, schedule,
             difficulty: diff, elevation: elev, limit, joined: 0,

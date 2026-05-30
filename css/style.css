@@ -29,23 +29,26 @@ nav {
   position: sticky; top: 0; z-index: 100;
   background: var(--white);
   border-bottom: 1px solid var(--border);
-  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 3rem; height: 68px;
+  gap: 1rem;
 }
 
 .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
 .nav-logo-icon {
   width: 38px; height: 38px; background: var(--green-dark);
-  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;                                                       
 }
 .nav-logo-icon svg { width: 22px; height: 22px; }
 .nav-logo-text { font-size: 1.1rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.01em; }
 
-.nav-links { display: flex; gap: 0.25rem; list-style: none; justify-content: center; }
+.nav-links { display: flex; gap: 0.25rem; list-style: none; justify-content: center; flex-wrap: nowrap; flex-shrink: 0; }
 .nav-links a {
   text-decoration: none; color: var(--text-mid);
   font-size: 0.9rem; font-weight: 500;
-  padding: 0.45rem 1rem; border-radius: 8px;
+  padding: 0.45rem 0.7rem; border-radius: 8px;
   transition: background 0.2s, color 0.2s;
 }
 .nav-links a:hover { background: var(--green-light); color: var(--green-dark); }
@@ -55,10 +58,24 @@ nav {
   display: flex; align-items: center; gap: 0.75rem;
   justify-content: flex-end;
 }
+.nav-login {
+  text-decoration: none; color: var(--text-mid);
+  font-size: 0.9rem; font-weight: 500;
+  padding: 0.45rem 1rem; border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-login:hover { background: var(--green-light); color: var(--green-dark); }
+.nav-signup {
+  background: var(--green-dark); color: var(--white);
+  text-decoration: none; font-size: 0.875rem; font-weight: 700;
+  padding: 0.5rem 1.1rem; border-radius: 50px;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-signup:hover { background: var(--green-mid); transform: translateY(-1px); }
 
 .nav-user {
   display: flex; align-items: center; gap: 0.6rem;
-  justify-content: flex-end; min-width: 160px;
+  justify-content: flex-end;
 }
 .nav-avatar {
   width: 36px; height: 36px; border-radius: 50%;
@@ -66,8 +83,16 @@ nav {
   display: flex; align-items: center; justify-content: center;
 }
 .nav-avatar svg { width: 20px; height: 20px; }
+.nav-user span { font-size: 0.9rem; font-weight: 600; color: var(--text-dark); }
 
-/* ── HERO ── */
+.nav-logout-btn {
+  background: transparent; border: 1.5px solid var(--border);
+  color: var(--text-mid); font-size: 0.82rem; font-weight: 600;
+  padding: 0.35rem 0.85rem; border-radius: 50px; cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.nav-logout-btn:hover { background: var(--green-light); color: var(--green-dark); border-color: var(--green-mid); }
+
 .hero {
   position: relative;
   min-height: 580px;
@@ -117,7 +142,6 @@ nav {
 .hero-wave { position: absolute; bottom: -1px; left: 0; right: 0; line-height: 0; }
 .hero-wave svg { display: block; width: 100%; }
 
-/* ── STATS ── */
 .stats { background: var(--white); padding: 3rem; }
 .stats-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
@@ -139,7 +163,6 @@ nav {
 .stat-num { font-size: 2rem; font-weight: 800; color: var(--green-dark); letter-spacing: -0.02em; }
 .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem; font-weight: 500; }
 
-/* ── ABOUT ── */
 .about { background: var(--green-pale); padding: 5rem 3rem; }
 .about-inner {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -177,7 +200,6 @@ nav {
 .about-photo-1 img,
 .about-photo-2 img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ── BMC ── */
 .bmc { background: var(--white); padding: 5rem 3rem; }
 .bmc-inner {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -213,7 +235,6 @@ nav {
 .bmc-next-label { font-size: 0.78rem; font-weight: 600; color: var(--green-mid); margin-bottom: 0.2rem; }
 .bmc-next-date { font-size: 1rem; font-weight: 700; color: var(--text-dark); }
 
-/* ── OPEN CLIMBS ── */
 .climbs { background: var(--green-pale); padding: 5rem 3rem; }
 .climbs-header { text-align: center; margin-bottom: 3rem; }
 .climbs-header h2 {
@@ -260,7 +281,6 @@ nav {
 
 .climbs-cta { text-align: center; }
 
-/* ── FOOTER ── */
 footer { background: var(--green-dark); padding: 3.5rem 3rem 1.5rem; }
 .footer-grid {
   display: grid; grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
@@ -302,12 +322,10 @@ footer { background: var(--green-dark); padding: 3.5rem 3rem 1.5rem; }
   text-align: center; font-size: 0.82rem; color: rgba(255,255,255,0.45);
 }
 
-/* ── ANIMATIONS ── */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── MOBILE ── */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   nav { padding: 0 1.5rem; }
   .nav-links { display: none; }
   .about-inner, .bmc-inner { grid-template-columns: 1fr; }
