@@ -1,12 +1,12 @@
 const USERS = {
     admin: {
-        username: 'Jena Ruanes',
+        username: 'jenaruanes',
         password: 'Admin123',
         fullName: 'Jena Ruanes',
         role: 'admin',
     },
     user: {
-        username: 'Desiree Lagman',
+        username: 'desireeLagman',
         password: 'User123',
         fullName: 'Desiree Lagman',
         role: 'user',
@@ -14,12 +14,12 @@ const USERS = {
 };
 
 function saveSession(user, remember) {
-    const storage = remember ? localStorage : sessionStorage;                                                                                                                                       
+    const storage = remember ? localStorage : sessionStorage;
     storage.setItem('mms_user', JSON.stringify(user));
 }
 
 function getSession() {
-    const data = localStorage.getItem('mms_user') || sessionStorage.getItem ('mms_user');
+    const data = localStorage.getItem('mms_user') || sessionStorage.getItem('mms_user');
     return data ? JSON.parse(data) : null;
 }
 
@@ -38,5 +38,6 @@ function getCurrentUser() {
 
 function logout() {
     clearSession();
-    window.location.href = 'home.html';
+    const isAdmin = window.location.pathname.includes('/admin/');
+    window.location.href = isAdmin ? '../login.html' : 'login.html';
 }

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const session = getSession();
     if (session) {
         session.role === 'admin'
-        ? window.location.href = '/admin/dashboard.html'
+        ? window.location.href = 'dashboard.html'
         : window.location.href = 'home.html';
         return;
     }

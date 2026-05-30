@@ -1,14 +1,17 @@
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ── SCROLL REVEAL ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── DYNAMIC NAVBAR ──
   const user = getCurrentUser();
   const myClimbsLink = document.getElementById('myClimbsLink');
   const navAuth = document.querySelector('.nav-auth');
@@ -46,4 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`;
     }
   }
+
 });

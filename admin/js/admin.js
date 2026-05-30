@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nameEl) nameEl.textContent = user.fullName;
 
     const logoutBtn = document.getElementById('logoutBtn');
-    if (logout) {
+    if (logoutBtn) {
         logoutBtn.addEventListener('click', () => {
             logout();
-            window.location.href = '../login,html';
+            window.location.href = '../login.html';
         });
     }
 
     const welcomeMsg = document.getElementById('welcomeMsg');
-    if (welcomeMsg) welcomeMsg.textContent = 'welcome, ${user.fullName}';
+    if (welcomeMsg) welcomeMsg.textContent = `Welcome, ${user.fullName}`;
 });
 
 function openModal(id) {
@@ -37,7 +37,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-document.addEventListener('kaydown', (e) => {
+document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         document.querySelectorAll('.modal-overlay.active').forEach(m => {
             m.classList.remove('active');
