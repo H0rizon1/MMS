@@ -104,8 +104,7 @@ nav {
 .hero-bg {
   position: absolute; inset: 0;
   background:
-    linear-gradient(to bottom, rgba(20,70,40,0.72) 0%, rgba(20,70,40,0.55) 60%, rgba(20,70,40,0.72) 100%),
-    url('../images/hero.jpeg') center/cover no-repeat;
+    linear-gradient(to bottom, rgba(20,70,40,0.72) 0%, rgba(20,70,40,0.55) 60%, rgba(20,70,40,0.72) 100%)
 }
 
 .hero-content { position: relative; max-width: 720px; }
@@ -188,7 +187,7 @@ nav {
 .btn-green:hover { background: var(--green-mid); transform: translateY(-2px); }
 .btn-green svg { width: 16px; height: 16px; }
 
-.about-photos { position: relative; height: 420px; }
+.about-photos { position: relative; height: 420px; overflow: hidden; }
 .about-photo-1 {
   position: absolute; top: 0; left: 0; width: 62%; aspect-ratio: 4/3;
   border-radius: var(--radius); overflow: hidden; box-shadow: var(--card-shadow);
@@ -322,16 +321,20 @@ footer { background: var(--green-dark); padding: 3.5rem 3rem 1.5rem; }
   text-align: center; font-size: 0.82rem; color: rgba(255,255,255,0.45);
 }
 
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 1; transform: none; }
+.reveal.visible { opacity: 1; transform: none; }
 
 @media (max-width: 600px) {
   nav { padding: 0 1.5rem; }
   .nav-links { display: none; }
   .about-inner, .bmc-inner { grid-template-columns: 1fr; }
-  .about-photos { height: 280px; }
+  .about-photos { position: relative; height: 280px; overflow: hidden; }
   .climbs-grid, .stats-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .stats, .about, .bmc, .climbs { padding: 3rem 1.5rem; }
   footer { padding: 3rem 1.5rem 1.5rem; }
+}
+
+.about {
+  overflow: hidden;
 }

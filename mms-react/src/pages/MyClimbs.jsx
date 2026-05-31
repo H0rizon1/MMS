@@ -7,9 +7,9 @@ import "../css/style.css";
 import "../css/myclimbs.css";
 
 const allClimbs = {
-  kapig: { id:"kapig", name:"Mt. Kapigpiglatan", loc:"Benguet", date:"June 15–16, 2026", masl:"1,028 MASL", img:"/images/mtkapig.jpg", desc:"A beginner-friendly mountain perfect for first-time hikers." },
-  pulag: { id:"pulag", name:"Mt. Pulag", loc:"Benguet", date:"July 20–22, 2026", masl:"2,922 MASL", img:"/images/pulag1.jpg", desc:"The third highest peak in the Philippines. Famous for its sea of clouds." },
-  ulap:  { id:"ulap",  name:"Mt. Ulap", loc:"Benguet", date:"August 5–6, 2026", masl:"1,846 MASL", img:"/images/MtUlap.jpg", desc:"Known for its Godzilla-like mountain ridges and rolling hills." },
+  kapig: { id:"kapig", name:"Mt. Kapigpiglatan", loc:"Benguet", date:"June 15–16, 2026", masl:"1,028 MASL", img:"/mtkapig.jpg", desc:"A beginner-friendly mountain perfect for first-time hikers." },
+  pulag: { id:"pulag", name:"Mt. Pulag", loc:"Benguet", date:"July 20–22, 2026", masl:"2,922 MASL", img:"/pulag1.jpg", desc:"The third highest peak in the Philippines. Famous for its sea of clouds." },
+  ulap:  { id:"ulap",  name:"Mt. Ulap", loc:"Benguet", date:"August 5–6, 2026", masl:"1,846 MASL", img:"/MtUlap.jpg", desc:"Known for its Godzilla-like mountain ridges and rolling hills." },
 };
 
 export default function MyClimbs() {

@@ -1,36 +1,20 @@
-import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../css/style.css";
 
 export default function Home() {
-  const revealRefs = useRef([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add("visible"), i * 80);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    revealRefs.current.forEach(el => { if (el) observer.observe(el); });
-    return () => observer.disconnect();
-  }, []);
-
-  const addReveal = (el) => {
-    if (el && !revealRefs.current.includes(el)) revealRefs.current.push(el);
-  };
-
   return (
     <>
       <Navbar />
 
       {/* HERO */}
       <section className="hero">
-        <div className="hero-bg"></div>
+        <div className="hero-bg" style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(20,70,40,0.72) 0%, rgba(20,70,40,0.55) 60%, rgba(20,70,40,0.72) 100%), url('/hero.jpeg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}></div>
         <div className="hero-content">
           <h1 className="hero-title">Metropolitan Mountaineering Society</h1>
           <p className="hero-sub">Discover. Climb. Preserve. Join us in exploring the great outdoors.</p>
@@ -49,7 +33,7 @@ export default function Home() {
       {/* STATS */}
       <div className="stats">
         <div className="stats-grid">
-          <div className="stat-card reveal" ref={addReveal}>
+          <div className="stat-card">
             <div className="stat-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                 <path d="M3 18 L12 5 L21 18" strokeLinecap="round" strokeLinejoin="round"/>
@@ -58,7 +42,7 @@ export default function Home() {
             <div className="stat-num">50+</div>
             <div className="stat-label">Mountains Conquered</div>
           </div>
-          <div className="stat-card reveal" ref={addReveal}>
+          <div className="stat-card">
             <div className="stat-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                 <circle cx="9" cy="7" r="3"/>
@@ -70,7 +54,7 @@ export default function Home() {
             <div className="stat-num">1,000+</div>
             <div className="stat-label">Active Members</div>
           </div>
-          <div className="stat-card reveal" ref={addReveal}>
+          <div className="stat-card">
             <div className="stat-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                 <circle cx="12" cy="8" r="5"/>
@@ -86,7 +70,7 @@ export default function Home() {
       {/* ABOUT */}
       <section className="about" id="about">
         <div className="about-inner">
-          <div className="reveal" ref={addReveal}>
+          <div>
             <p className="about-label">Who We Are</p>
             <h2>About MMS</h2>
             <p>The Metropolitan Mountaineering Society is a community of passionate outdoor enthusiasts dedicated to promoting mountaineering as a sport while advocating for environmental conservation. Since 1994, we've been organizing climbs, training programs, and conservation initiatives across the Philippines.</p>
@@ -98,13 +82,8 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-          <div className="about-photos reveal" ref={addReveal}>
-            <div className="about-photo-1">
-              <img src="/images/about.jpg" alt="MMS members hiking" />
-            </div>
-            <div className="about-photo-2">
-              <img src="/images/hero.jpeg" alt="Mountain scenery" />
-            </div>
+          <div className="about-photos">
+              <img src="/about.jpg" alt="MMS members hiking" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '16px'}} />
           </div>
         </div>
       </section>
@@ -112,10 +91,10 @@ export default function Home() {
       {/* BMC */}
       <section className="bmc" id="bmc">
         <div className="bmc-inner">
-          <div className="bmc-photo reveal" ref={addReveal}>
-            <img src="/images/bmc.jpg" alt="BMC training" />
+          <div className="bmc-photo">
+            <img src="/bmc.jpg" alt="BMC training" />
           </div>
-          <div className="bmc-content reveal" ref={addReveal}>
+          <div className="bmc-content">
             <span className="bmc-badge">Training Program</span>
             <h2>Basic Mountaineering Course</h2>
             <p>Our BMC is a comprehensive training program designed for beginners. Learn essential mountaineering skills including outdoor cooking, tent pitching, navigation, first aid, and Leave No Trace principles from experienced instructors.</p>
@@ -160,17 +139,17 @@ export default function Home() {
 
       {/* OPEN CLIMBS */}
       <section className="climbs" id="climbs">
-        <div className="climbs-header reveal" ref={addReveal}>
+        <div className="climbs-header">
           <h2>Upcoming Open Climbs</h2>
           <p>Join our community on these exciting adventures</p>
         </div>
         <div className="climbs-grid">
           {[
-            { img: "/images/MtKapigpiglatan.jpg", name: "Mt. Kapigpiglatan", loc: "Benguet", masl: "1,028 MASL", joined: "12/20", date: "June 15–16, 2026", diff: "4/9", id: "kapig" },
-            { img: "/images/MtPulagjpg.jpg", name: "Mt. Pulag", loc: "Benguet", masl: "2,922 MASL", joined: "18/25", date: "July 20–22, 2026", diff: "5/9", id: "pulag" },
-            { img: "/images/MtUlap.jpg", name: "Mt. Ulap", loc: "Benguet", masl: "1,846 MASL", joined: "8/30", date: "August 5–6, 2026", diff: "3/9", id: "ulap" },
+            { img: "/mtkapig.jpg", name: "Mt. Kapigpiglatan", loc: "Benguet", masl: "1,028 MASL", joined: "12/20", date: "June 15–16, 2026", diff: "4/9", id: "kapig" },
+            { img: "/pulag1.jpg",  name: "Mt. Pulag",         loc: "Benguet", masl: "2,922 MASL", joined: "18/25", date: "July 20–22, 2026",  diff: "5/9", id: "pulag" },
+            { img: "/ulap1.jpg",   name: "Mt. Ulap",          loc: "Benguet", masl: "1,846 MASL", joined: "8/30",  date: "August 5–6, 2026",  diff: "3/9", id: "ulap"  },
           ].map(climb => (
-            <div className="climb-card reveal" key={climb.id} ref={addReveal}>
+            <div className="climb-card" key={climb.id}>
               <div className="climb-img">
                 <img src={climb.img} alt={climb.name} />
                 <span className="climb-slots">{climb.diff}</span>
@@ -193,7 +172,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="climbs-cta reveal" ref={addReveal}>
+        <div className="climbs-cta">
           <Link to="/climbs" className="btn-green">
             View All Climbs
             <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">

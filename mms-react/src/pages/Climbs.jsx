@@ -10,7 +10,7 @@ const climbData = {
   kapig: {
     name: "Mt. Kapigpiglatan", loc: "Benguet", difficulty: "Difficulty: 4/9",
     elevation: "1,028 MASL", schedule: "June 15–16, 2026", location: "Benguet",
-    participants: "12/20", slotsPct: 60, bg: "/images/mtkapig.jpg",
+    participants: "12/20", slotsPct: 60, bg: "/mtkapig.jpg",
     about: "A beginner-friendly mountain perfect for first-time hikers. Features scenic grasslands and pine forests.",
     itinerary: {
       "Day 1": ["6:00 AM - Assembly point at MMS Office","7:00 AM - ETD to Benguet","12:00 PM - Lunch at jump-off","1:00 PM - Start trek","5:00 PM - Set up camp","6:00 PM - Dinner and socials"],
@@ -25,7 +25,7 @@ const climbData = {
   pulag: {
     name: "Mt. Pulag", loc: "Benguet", difficulty: "Difficulty: 5/9",
     elevation: "2,922 MASL", schedule: "July 20–22, 2026", location: "Benguet",
-    participants: "18/25", slotsPct: 72, bg: "/images/pulag1.jpg",
+    participants: "18/25", slotsPct: 72, bg: "/pulag1.jpg",
     about: "The third highest peak in the Philippines. Famous for its sea of clouds and stunning sunrise views.",
     itinerary: {
       "Day 1": ["5:00 AM - Assembly at MMS Office","6:00 AM - ETD to Benguet","2:00 PM - Arrive at ranger station","3:00 PM - Start trek to campsite","6:00 PM - Set up camp","7:00 PM - Dinner and briefing"],
@@ -41,7 +41,7 @@ const climbData = {
   ulap: {
     name: "Mt. Ulap", loc: "Benguet", difficulty: "Difficulty: 3/9",
     elevation: "1,846 MASL", schedule: "August 5–6, 2026", location: "Benguet",
-    participants: "8/30", slotsPct: 27, bg: "/images/MtUlap.jpg",
+    participants: "8/30", slotsPct: 27, bg: "/MtUlap.jpg",
     about: "Known for its Godzilla-like mountain ridges and rolling hills. Perfect for beginners who want a scenic adventure.",
     itinerary: {
       "Day 1": ["6:00 AM - Assembly at MMS Office","7:00 AM - ETD to Benguet","12:00 PM - Arrive at jump-off","1:00 PM - Start trek","5:00 PM - Set up camp at ridge","6:30 PM - Dinner and socials"],
@@ -56,9 +56,9 @@ const climbData = {
 };
 
 const climbCards = [
-  { id: "kapig", img: "/images/mtkapig.jpg", name: "Mt. Kapigpiglatan", loc: "Benguet", masl: "1,028 MASL", date: "June 15–16, 2026", joined: "12/20", diff: "Difficulty: 4/9", pct: 60 },
-  { id: "pulag", img: "/images/pulag1.jpg", name: "Mt. Pulag", loc: "Benguet", masl: "2,922 MASL", date: "July 20–22, 2026", joined: "18/25", diff: "Difficulty: 5/9", pct: 72 },
-  { id: "ulap", img: "/images/MtUlap.jpg", name: "Mt. Ulap", loc: "Benguet", masl: "1,846 MASL", date: "August 5–6, 2026", joined: "8/30", diff: "Difficulty: 3/9", pct: 27 },
+  { id: "kapig", img: "/mtkapig.jpg", name: "Mt. Kapigpiglatan", loc: "Benguet", masl: "1,028 MASL", date: "June 15–16, 2026", joined: "12/20", diff: "Difficulty: 4/9", pct: 60 },
+  { id: "pulag", img: "/pulag1.jpg", name: "Mt. Pulag", loc: "Benguet", masl: "2,922 MASL", date: "July 20–22, 2026", joined: "18/25", diff: "Difficulty: 5/9", pct: 72 },
+  { id: "ulap", img: "/MtUlap.jpg", name: "Mt. Ulap", loc: "Benguet", masl: "1,846 MASL", date: "August 5–6, 2026", joined: "8/30", diff: "Difficulty: 3/9", pct: 27 },
 ];
 
 const CheckIcon = () => (
