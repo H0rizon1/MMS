@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../css/style.css";
 
 export default function Home() {
-  return (
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }, []);
+    return (
     <>
-      <Navbar />
-
+    <Navbar />
       {/* HERO */}
       <section className="hero">
         <div className="hero-bg" style={{

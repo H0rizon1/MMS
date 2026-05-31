@@ -16,7 +16,7 @@
   --radius-sm:   10px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -337,4 +337,19 @@ footer { background: var(--green-dark); padding: 3.5rem 3rem 1.5rem; }
 
 .about {
   overflow: hidden;
+}
+
+#root {
+  position: static !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+html, body, #root {
+  scroll-snap-type: none !important;
+}
+
+body {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
